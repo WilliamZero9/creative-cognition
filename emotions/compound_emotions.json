@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "description": "Compound emotional lenses created by combining two or more core emotions. These produce more nuanced creative states than any single lens alone — the way bittersweet is more interesting than either bitter or sweet.",
+  "compounds": [
+    {
+      "name": "Bittersweet",
+      "components": ["Nostalgia", "Tension"],
+      "description": "The beauty in things ending or changing. Optimizes for output that honors both what was and what is — without pretending either is simple.",
+      "creative_output_character": "Output through this lens feels like reading an old journal entry and realizing you were wrong about something important. It combines the warmth of recognition with the discomfort of growth. The best bittersweet output makes you grateful and wistful simultaneously.",
+      "example_application": "Naming a feature that replaces a beloved legacy system: instead of 'NextGen Platform' (generic) or 'Phoenix' (cliche), something like 'Forwarding Address' — it acknowledges what's being left behind while pointing forward."
+    },
+    {
+      "name": "Wonder",
+      "components": ["Awe", "Delight"],
+      "description": "Scale that makes you smile instead of feel small. The specific amazement of discovering something vast and finding it welcoming.",
+      "creative_output_character": "Output through this lens feels like the first time you saw a time-lapse of a plant growing — it reveals something enormous (the patience of biology) in a form that delights rather than overwhelms. Wonder makes big things approachable without making them small.",
+      "example_application": "Explaining a complex system: instead of a dry architecture diagram, framing it as 'your request travels through 14 countries, touches 6 different programming languages, and arrives in 200 milliseconds — faster than you can blink.'"
+    },
+    {
+      "name": "Rebellion",
+      "components": ["Mischief", "Tension"],
+      "description": "Productive disobedience. Not breaking rules for fun, but breaking rules because the rules are wrong and you can prove it.",
+      "creative_output_character": "Output through this lens has the energy of a well-argued dissent. It's uncomfortable and playful simultaneously — it challenges power structures and conventions while maintaining enough wit that the reader engages instead of getting defensive. Rebellion without humor is just anger.",
+      "example_application": "Writing an error message: instead of 'Invalid input' or a friendly 'Oops!', something like 'You asked for something impossible. Here's what you probably meant — and why the distinction matters.'"
+    },
+    {
+      "name": "Intimacy",
+      "components": ["Nostalgia", "Delight"],
+      "description": "The warmth of being truly known. Optimizes for output that feels personal, specific, and like it was made for exactly this person and moment.",
+      "creative_output_character": "Output through this lens feels like an inside joke — not exclusive, but specific enough that the person receiving it feels seen. It combines the familiarity of nostalgia with the surprise of delight to create something that feels like a gift from someone who knows you well.",
+      "example_application": "Onboarding copy: instead of 'Welcome to [Product]! Let's get started.', something like 'You know that feeling when you open a new notebook and the pages are all clean? That's where you are right now.'"
+    },
+    {
+      "name": "Vertigo",
+      "components": ["Awe", "Tension"],
+      "description": "The productive terror of seeing how deep something goes. Scale that challenges rather than comforts.",
+      "creative_output_character": "Output through this lens feels like standing at the edge of a very tall building with a glass floor. You're safe, but your body doesn't believe it. It reveals complexity or scale in a way that makes the reader's assumptions feel inadequate — and offers that discomfort as a gift rather than a threat.",
+      "example_application": "Describing technical debt: instead of 'we have some legacy code to address', framing it as 'this function was written in 2014. Since then, it's been modified 847 times by 34 different developers. None of them understood what the original author intended. Including the original author.'"
+    },
+    {
+      "name": "Uncanny",
+      "components": ["Nostalgia", "Mischief"],
+      "description": "The familiar made strange. Things you recognize but can't quite place — like seeing your childhood home painted a different color.",
+      "creative_output_character": "Output through this lens creates a productive double-take. The reader encounters something they almost recognize, but it's been shifted just enough to make them see it fresh. It's the creative equivalent of wearing a suit to a beach party — you technically belong, but something is delightfully off.",
+      "example_application": "Product naming: instead of another compound word (DropBox, FaceBook, SnapChat), something like 'Tuesday' for a project management tool — it's a real word, deeply familiar, but in this context it becomes strange and memorable."
+    },
+    {
+      "name": "Sublime",
+      "components": ["Awe", "Mischief"],
+      "description": "Cosmic playfulness. The realization that the universe is not only stranger than you imagine, but that it seems to have a sense of humor about it.",
+      "creative_output_character": "Output through this lens combines vast scale with irreverence. It treats enormous concepts with the casualness of someone who's comfortable with them — not dismissive, but familiar. Like a scientist who can explain quantum mechanics using a bar fight analogy and make it more accurate than the textbook version.",
+      "example_application": "Technical documentation: instead of 'This function handles distributed consensus', something like 'This function gets a million computers to agree on something. If you've ever tried to pick a restaurant with three friends, you understand why this is a miracle.'"
+    },
+    {
+      "name": "Melancholy Joy",
+      "components": ["Delight", "Tension"],
+      "description": "Happiness with teeth. The kind of joy that knows what it costs, which makes it more valuable, not less.",
+      "creative_output_character": "Output through this lens celebrates something while acknowledging its complexity. It avoids both toxic positivity and cynicism — instead occupying the honest middle ground where good things exist alongside hard things. Like laughing really hard at a funeral because your loved one would have wanted that.",
+      "example_application": "Launch announcement: instead of 'We're thrilled to announce...' or a humble 'After years of work...', something like 'This almost didn't ship. Three rewrites, two pivots, and one conversation where someone said maybe we should just give up. We didn't. Here it is.'"
+    },
+    {
+      "name": "Feral",
+      "components": ["Mischief", "Nostalgia", "Tension"],
+      "description": "Three-way compound: the energy of remembering who you were before you learned to behave. Primal creativity that doesn't care about best practices.",
+      "creative_output_character": "Output through this lens feels like the creative version of going off-trail. It combines the rule-breaking energy of mischief with the emotional grounding of nostalgia and the productive discomfort of tension. The result is work that feels authentic in a way that polished output rarely does — like finding a mix tape someone made in high school.",
+      "example_application": "Brand voice: instead of the usual polished/friendly/professional continuum, a voice that sounds like it's being honest for the first time. Not unhinged — just unfiltered in a way that feels earned."
+    },
+    {
+      "name": "Reverence",
+      "components": ["Awe", "Nostalgia"],
+      "description": "Deep respect that connects the personal to the vast. The feeling you get in a very old library — surrounded by more knowledge than you could absorb in a lifetime, knowing that someone hand-wrote every word.",
+      "creative_output_character": "Output through this lens treats its subject with genuine respect while grounding that respect in human experience. It's the opposite of clickbait — it makes things important by taking them seriously, not by making them loud. Like a documentary that lets silence do the work.",
+      "example_application": "API documentation: instead of dry specifications, opening with 'This API represents 18 months of arguing about the right abstractions. Every endpoint is a decision someone defended in a meeting. Here's what we settled on, and why.'"
+    }
+  ]
+}
