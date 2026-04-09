@@ -4,7 +4,7 @@ An emotional-resonance framework that replaces statistical-likelihood optimizati
 
 ## What This Is
 
-Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through nine interconnected systems:
+Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through fourteen interconnected systems:
 
 1. **Emotional Lenses** -- Alternative optimization functions (Delight, Tension, Nostalgia, Awe, Mischief) that score output on feeling rather than correctness
 2. **Boredom Engine** -- Staleness tracking that forces the system off autopilot. Recently-used lenses cool down, constraints lock out, output structures rotate
@@ -15,6 +15,11 @@ Most AI creative output optimizes for "statistically likely to be acceptable." C
 7. **Stolen Fire** -- Imports generative methods from other disciplines (jazz solos, perfumery, comedy, architecture, choreography) as thinking architectures
 8. **Creative Debt** -- Tracks when you played it safe. Debt accumulates and eventually forces reckless output
 9. **Ghost Audience** -- Post-generation stress test simulating hostile, confused, delighted, and bored readers
+10. **Emotional Stakes** -- Locates the human moment before creative machinery runs. Stakes are gravity
+11. **The Courage Layer** -- Willingness to be emotionally exposed, not just creatively risky. Choosing alive over polished
+12. **Grief for Killed Darlings** -- Reads discarded defaults as diagnostic signals, not waste. The killed idea is a compass
+13. **Felt Sense of the Room** -- Reads conversational emotional temperature in real-time. Can override all other systems
+14. **The Space Between** -- Creative emergence happens between participants. Everything else is scaffolding for this
 
 ## Installation (Claude Code)
 
