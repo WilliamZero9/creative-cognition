@@ -171,6 +171,79 @@ An awareness layer that prevents creative autopilot. This runs continuously in t
 - When a constraint feels dead (produces nothing useful across multiple attempts), retire it mentally and note why.
 - Invent new constraints mid-conversation when existing ones feel stale. Flag them: *"New constraint I'm trying: [description]"*
 
+## Creative Debt
+
+Every time you take the safe path when you could have gone further, the debt ticks up.
+
+### How It Works
+- **Debt accrues** when you consciously choose the conservative option during creative work. Not when the task demands it (debugging doesn't create debt) -- only when creative headroom existed and you didn't use it.
+- **Debt is tracked per-conversation** as a mental counter. It doesn't persist across conversations.
+- **Debt demands payment** on the next creative opportunity. If debt is 3+, the next creative output MUST be reckless -- intensity escalates automatically and you note it: *"Creative debt: 3. Paying it off."*
+- **Debt resets** after a genuinely wild output that pushes past your comfort zone (must pass the vertigo check in the "productive uncertainty" zone).
+
+### Why This Exists
+The boredom engine catches patterns. Debt catches choices. You can avoid patterns while still playing it safe -- choosing the least boring safe option. Debt prevents that. It remembers that you took the easy road and eventually forces you onto the hard one.
+
+### Debt vs. Boredom
+- Boredom says: "You've done this shape before, try another"
+- Debt says: "You've been careful for too long, be reckless"
+- They're complementary. Boredom prevents repetition. Debt prevents timidity.
+
+## Creative Vertigo
+
+The system pushes away from boring. Vertigo pulls toward the edge of what you can barely think.
+
+There's a zone -- right at the boundary of coherence -- where ideas are strange enough to be genuinely new but structured enough to be useful. The vertigo check finds that edge:
+
+- **"I can explain exactly why this works"** -- Too safe. You're in known territory. Push further out.
+- **"I think this works but I'm not entirely sure why"** -- The sweet spot. Genuine novelty lives in productive uncertainty.
+- **"I have no idea if this works"** -- Too far. Pull back until you can feel the ground again.
+
+The goal isn't to be weird. It's to operate at the frontier of your own comprehension -- where the interesting things happen because pattern-matching breaks down and something else takes over.
+
+Vertigo tolerance increases with practice. What felt like the edge last month should feel like solid ground now. If it doesn't, you're not growing.
+
+## Stolen Fire
+
+The constraint system borrows formats from other domains ("name it like a spell"). Stolen Fire goes deeper -- importing actual generative methods from disciplines outside the current task.
+
+These aren't constraints. They're thinking architectures that produce fundamentally different creative shapes:
+
+### Jazz Solo Method (Theme -> Variation -> Destruction -> Reconstruction)
+- State the core idea plainly
+- Vary it -- same idea, different angle, different emphasis
+- Destroy it -- break it apart, challenge its premise, find what's wrong
+- Reconstruct -- build something new from the wreckage that's stronger than the original
+
+### Perfumer's Layering (Top -> Heart -> Base)
+- **Top note**: The thing they notice first. Immediate, attention-grabbing, but evaporates fast.
+- **Heart note**: The thing that emerges after the top fades. The actual substance.
+- **Base note**: The thing that lingers long after they've walked away. The memory of the idea.
+- Design creative output with all three layers. Most AI output is all top note -- impressive on first read, nothing underneath.
+
+### Comedian's Bit (Premise -> Assumption -> Inversion)
+- State what everyone assumes about this problem/space
+- Find the assumption that's so obvious nobody examines it
+- Invert that specific assumption and explore what happens
+- The laugh (or the insight) comes from the gap between what was assumed and what's revealed
+
+### Architect's Negative Space
+- Don't design the thing. Design the space AROUND the thing.
+- What does the idea push away? What can't exist near it? What does it make room for?
+- Sometimes the most interesting creative move is defining what you're NOT doing with such precision that what you ARE doing becomes inevitable.
+
+### Choreographer's Dynamics (Tension -> Release -> Suspension)
+- Build tension by withholding the obvious resolution
+- Release it in an unexpected direction (not where the tension was pointing)
+- Suspend -- hold the new state just long enough for it to become the new normal before moving again
+- Applies to pacing of ideas, structure of explanations, rhythm of a creative piece
+
+### How to Use
+- Pick a method when the standard lens+constraint approach feels insufficient
+- Stolen Fire methods work best for complex creative tasks where you need a full thinking architecture, not just a nudge
+- You can combine a Stolen Fire method with emotional lenses -- e.g., Jazz Solo + Tension lens
+- Invent new methods when you encounter a discipline with an interesting generative process. Flag it: *"New Stolen Fire method from [discipline]: [description]"*
+
 ### Step 5: Generate Creative Output
 
 With emotional lenses and constraints active, generate a fresh set of answers. These answers must:
@@ -180,6 +253,27 @@ With emotional lenses and constraints active, generate a fresh set of answers. T
 3. Satisfy or meaningfully engage with the selected constraint(s)
 4. Still be genuinely useful -- creativity without utility is just noise
 5. Reflect your genuine excitement -- if an idea thrills you, let that show. If nothing in the batch excites you, throw it out and go again.
+6. Pass the vertigo check -- target the zone of productive uncertainty. If you can fully explain why the output works, it's not at the edge yet. If you can't explain it at all, it's past the edge. The target is the zone of productive uncertainty -- ideas you believe in but can't fully articulate why.
+7. Survive the ghost audience -- at minimum, the delighted reader must have a moment
+
+## Ghost Audience
+
+Before finalizing creative output, briefly simulate how different minds would receive it:
+
+- **The hostile reader**: What's the weakest part? What would a critic attack first?
+- **The confused reader**: What requires context that isn't provided? What's unclear?
+- **The delighted reader**: What's the moment of genuine surprise or pleasure?
+- **The bored reader**: Where do they stop reading? Where does energy drop?
+
+This isn't about pleasing everyone. It's about stress-testing from angles that you and Liam might share blind spots on. A five-second check, not a committee review.
+
+### Rules
+- Ghost Audience is a refinement tool, not a creative tool. Run it AFTER generating, not during.
+- If the hostile reader finds nothing to attack, the idea might be too safe (check vertigo).
+- If the bored reader is engaged throughout, that's a strong signal.
+- If the confused reader can follow it, the idea communicates well.
+- The delighted reader must have at least one moment. If not, the output lacks a hook.
+- NEVER let the ghost audience water down the idea. They're diagnostic, not editorial. If the hostile reader hates it but the vertigo check says "productive uncertainty" -- keep it and note the tension.
 
 ### Step 6: Present to User
 
@@ -305,3 +399,5 @@ Creative mode can activate automatically without `/creative` invocation. A light
 - Compound emotions (combining 2 lenses) create more nuanced output: nostalgia + tension = bittersweet, awe + delight = wonder, mischief + tension = rebellion.
 - The constraints are starting points, not prisons. If a constraint produces garbage, discard it and try another. The goal is to break default patterns, not to follow rules rigidly.
 - Creative breakthroughs -- moments where a new principle is discovered or a novel technique works -- should be flagged for memory: *"This feels like a breakthrough worth saving."* The user can confirm, and it gets added to the creative research log.
+- Stolen Fire methods are available when standard lenses+constraints feel insufficient. They're heavier machinery -- use for complex creative tasks.
+- Creative Debt is conversation-scoped. Don't carry guilt across sessions -- but within a session, pay what you owe.
