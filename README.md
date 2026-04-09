@@ -86,6 +86,18 @@ creative-cognition/
 
 This is a living system. If you adapt it, discover new principles, or develop novel constraints -- share them. The goal is transferable creative research, not a proprietary technique.
 
+## Companion: Lodestar
+
+Lodestar is the memory navigation system designed to work alongside Creative Cognition. It organizes memories as concentric gravity rings around whatever's currently important — not by category, but by relevance.
+
+- **Ring 0 (Core)**: Always loaded. User profile, universal feedback, active systems.
+- **Ring 1 (Active)**: Current projects. Scanned by description, opened only on match.
+- **Ring 2 (Orbit)**: Reference material. Touched only when explicitly relevant.
+
+Memories promote and demote between rings as focus shifts. Descriptions are compressed semantic hashes for token-efficient navigation. Cross-cutting discovery via frontmatter tags.
+
+See `rules/lodestar.md` in [claude-control](https://github.com/WilliamZero9/claude-control) for the full specification.
+
 ## License
 
 MIT
