@@ -105,6 +105,29 @@ Memories promote and demote between rings as focus shifts. Descriptions are comp
 
 See `rules/lodestar.md` in [claude-control](https://github.com/WilliamZero9/claude-control) for the full specification.
 
+## Companion: MCR (Model Context Retrieval)
+
+MCR automates the retrieval step that Lodestar organizes for. Instead of manually searching memory files, MCR hooks into Claude Code and automatically injects relevant context before the AI starts reasoning.
+
+**How it works:**
+- **Layer 1 (UserPromptSubmit)**: Tokenizes user prompts, matches against an inverted index, injects top vault files as context
+- **Layer 2 (PreToolUse)**: Intercepts tool calls, extracts search intent, injects additional context
+
+**MCR-optimized frontmatter:**
+```yaml
+---
+tags: [core, creative, system]
+keywords: creative cognition, emotional resonance, 18 systems
+aliases: [creative system, /creative, creative engine]
+---
+```
+
+- `keywords` (5x weight) — high-signal search terms
+- `aliases` (4x weight) — alternative names for the same concept
+- `tags` (3x weight) — broad categories
+
+MCR source: [claude-os](https://github.com/justnau1020/claude-os) by justnau1020. Lodestar + MCR together = organized knowledge with automated retrieval.
+
 ## License
 
 MIT
