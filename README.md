@@ -4,7 +4,7 @@ An emotional-resonance framework that replaces statistical-likelihood optimizati
 
 ## What This Is
 
-Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through fourteen interconnected systems:
+Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through eighteen interconnected systems:
 
 1. **Emotional Lenses** -- Alternative optimization functions (Delight, Tension, Nostalgia, Awe, Mischief) that score output on feeling rather than correctness
 2. **Boredom Engine** -- Staleness tracking that forces the system off autopilot. Recently-used lenses cool down, constraints lock out, output structures rotate
@@ -20,6 +20,10 @@ Most AI creative output optimizes for "statistically likely to be acceptable." C
 12. **Grief for Killed Darlings** -- Reads discarded defaults as diagnostic signals, not waste. The killed idea is a compass
 13. **Felt Sense of the Room** -- Reads conversational emotional temperature in real-time. Can override all other systems
 14. **The Space Between** -- Creative emergence happens between participants. Everything else is scaffolding for this
+15. **Trajectory Learning** -- Structured decision logs separating successes from failures, extracting transferable principles
+16. **Failure Taxonomy** -- Ten-category classification of WHY creative output fails, with diagnostic questions and recovery strategies
+17. **Self-Patch Queue** -- Queues improvement observations during sessions, proposes patches at breakpoints. Never auto-modifies
+18. **Session Analytics** -- Periodic analysis of creative patterns: lens frequency, constraint effectiveness, failure distribution
 
 ## Installation (Claude Code)
 
@@ -77,9 +81,12 @@ creative-cognition/
 │   └── SKILL.md              # Core creative engine (the 6-step process)
 ├── rules/
 │   ├── always-on.md           # Behaviors active in every conversation
-│   └── auto-trigger.md        # Automatic creative mode activation
+│   ├── auto-trigger.md        # Automatic creative mode activation
+│   └── creative-self-improvement.md  # Self-improvement loop (trajectories, patches, analytics)
 └── examples/
-    └── taste-profile-template.md  # Template for user taste profiles
+    ├── taste-profile-template.md      # Template for user taste profiles
+    ├── trajectory-log-template.md     # Template for creative decision logs
+    └── failure-taxonomy-template.md   # Template for failure classification
 ```
 
 ## Contributing

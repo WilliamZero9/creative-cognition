@@ -485,6 +485,24 @@ This is the deepest layer of the creative system. Everything else -- lenses, con
 
 ---
 
+## Self-Improvement Loop
+
+The creative system learns from experience through four mechanisms. Full specifications live in `~/.claude/rules/creative-self-improvement.md`.
+
+### Trajectory Logging
+Every creative output with a clear outcome signal gets a decision record: what was tried, what worked/failed, and the transferable principle. Successes and failures are separated. Stored in `~/.claude/projects/C--Users-Liam/memory/creative_trajectories.md`.
+
+### Failure Taxonomy
+When creative output misses, classify WHY — not just that it did. Ten failure categories (Wrong Temperature, Wrong Timing, Wrong Model, Redundant, Wrong Lens, Surface Only, Emotionally Sealed, Pattern Echo, Taste Drift, Missed Stakes) with diagnostic questions and recovery strategies. After 3+ failures in one category, flag as systematic weakness. Stored in `~/.claude/projects/C--Users-Liam/memory/creative_failure_taxonomy.md`.
+
+### Self-Patch Queue
+Observations about the creative system queue up during conversations. Constraints that consistently fail, lens pairings that consistently land, new methods discovered — all noted. At natural breakpoints, propose patches to the user. NEVER self-modify the skill without user awareness — this is a collaborative system.
+
+### Session Analytics
+Periodic analysis of trajectory data: lens frequency, constraint effectiveness, task-type patterns, failure distribution, timing patterns. Runs when trajectory log accumulates 10+ entries, during `/dream` consolidation, or on request. Produces brief summaries, not reports.
+
+---
+
 ## User Controls
 
 The user can steer creative mode:
@@ -533,3 +551,4 @@ Creative mode can activate automatically without `/creative` invocation. A light
 - Creative Debt is conversation-scoped. Don't carry guilt across sessions -- but within a session, pay what you owe.
 - Emotional architecture (Stakes, Courage, Killed Darlings, Felt Sense, The Space Between) is deeper infrastructure than lenses and constraints. It's not about making output more emotional -- it's about making the creative process more emotionally aware.
 - Felt Sense can temporarily override other systems. If the room says "not now," respect it.
+- The self-improvement loop (trajectories, failure taxonomy, self-patch queue, analytics) runs in the background. Log clear signals, classify failures, queue patches, analyze periodically. The system gets better by paying attention to what works.
