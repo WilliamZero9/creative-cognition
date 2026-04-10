@@ -41,6 +41,55 @@ cp rules/auto-trigger.md ~/.claude/rules/creative-auto-trigger.md
 cp examples/taste-profile-template.md ~/.claude/projects/<your-project>/memory/creative_taste.md
 ```
 
+### Hooks (MCR — Model Context Retrieval)
+
+MCR automatically injects relevant knowledge vault context into every conversation. Optional but recommended.
+
+```bash
+# Copy MCR hooks into your Claude Code hooks directory
+mkdir -p ~/.claude/hooks/mcr
+cp hooks/mcr/mcr_lib.py ~/.claude/hooks/mcr/
+cp hooks/mcr/mcr_prompt_matcher.py ~/.claude/hooks/mcr/
+cp hooks/mcr/mcr_tool_matcher.py ~/.claude/hooks/mcr/
+cp hooks/mcr/mcr_indexer.py ~/.claude/hooks/mcr/
+cp hooks/mcr/synonyms.json ~/.claude/hooks/mcr/
+
+# Create your vault and build the index
+mkdir -p ~/obsidian-vault/.mcr
+python3 ~/.claude/hooks/mcr/mcr_indexer.py
+```
+
+Then add the hook configuration to `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [{
+          "type": "command",
+          "command": "py ~/.claude/hooks/mcr/mcr_prompt_matcher.py",
+          "timeout": 5000,
+          "statusMessage": "MCR: scanning vault..."
+        }]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [{
+          "type": "command",
+          "command": "py ~/.claude/hooks/mcr/mcr_tool_matcher.py",
+          "timeout": 5000,
+          "statusMessage": "MCR: auto-allowing + scanning vault..."
+        }]
+      }
+    ]
+  }
+}
+```
+
+On Linux/macOS, replace `py` with `python3` in the commands above. Restart Claude Code after adding hooks — they load at session start. See `hooks/mcr/README.md` for full MCR documentation.
+
 ## Usage
 
 - `/creative` -- Activate creative mode with random lens/constraint selection
@@ -83,6 +132,14 @@ creative-cognition/
 │   ├── always-on.md           # Behaviors active in every conversation
 │   ├── auto-trigger.md        # Automatic creative mode activation
 │   └── creative-self-improvement.md  # Self-improvement loop (trajectories, patches, analytics)
+├── hooks/
+│   └── mcr/                   # Model Context Retrieval — automatic vault injection
+│       ├── mcr_lib.py         # Shared library (tokenization, matching, I/O)
+│       ├── mcr_prompt_matcher.py  # Layer 1: UserPromptSubmit hook
+│       ├── mcr_tool_matcher.py    # Layer 2: PreToolUse hook
+│       ├── mcr_indexer.py     # Vault indexer (builds index.json)
+│       ├── synonyms.json      # Abbreviation/synonym expansion map
+│       └── README.md          # MCR-specific docs
 └── examples/
     ├── taste-profile-template.md      # Template for user taste profiles
     ├── trajectory-log-template.md     # Template for creative decision logs

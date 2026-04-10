@@ -1,0 +1,21 @@
+{
+  "auth": ["authentication", "login", "signin", "sign-in", "oauth"],
+  "js": ["javascript"],
+  "ts": ["typescript"],
+  "db": ["database"],
+  "k8s": ["kubernetes"],
+  "config": ["configuration"],
+  "env": ["environment"],
+  "repo": ["repository"],
+  "deps": ["dependencies"],
+  "fn": ["function"],
+  "args": ["arguments", "parameters"],
+  "async": ["asynchronous"],
+  "sync": ["synchronous"],
+  "api": ["endpoint", "rest"],
+  "ui": ["frontend", "interface"],
+  "ci": ["continuous integration"],
+  "cd": ["continuous deployment"],
+  "pr": ["pull request"],
+  "mr": ["merge request"]
+}
