@@ -527,7 +527,7 @@ def read_vault_files(matches, char_budget, max_files=5):
 
         # Resolve memory: prefixed paths to actual filesystem paths
         if fp.startswith("memory:"):
-            mem_rel = fp[len("memory:"):]  # e.g. "C--Users-Liam/file.md"
+            mem_rel = fp[len("memory:"):]  # e.g. "C--Users-User/file.md"
             full_path = None
             for mem_dir in MEMORY_PATHS:
                 candidate = os.path.join(mem_dir, mem_rel.replace("/", os.sep))

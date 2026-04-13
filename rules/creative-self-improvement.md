@@ -6,7 +6,7 @@ These systems run in the background, learning from every creative interaction to
 
 ### Trajectory Logging
 
-After every creative output that receives a clear signal (positive or negative), log a decision record to `~/.claude/projects/C--Users-Liam/memory/creative_trajectories.md`.
+After every creative output that receives a clear signal (positive or negative), log a decision record to `~/.claude/projects/C--Users-User/memory/creative_trajectories.md`.
 
 **What to log:**
 - Date, task type, approach (lenses/constraints/methods)
@@ -29,7 +29,7 @@ After every creative output that receives a clear signal (positive or negative),
 
 ### Failure Classification
 
-When creative output misses, classify WHY using the taxonomy in `~/.claude/projects/C--Users-Liam/memory/creative_failure_taxonomy.md`.
+When creative output misses, classify WHY using the taxonomy in `~/.claude/projects/C--Users-User/memory/creative_failure_taxonomy.md`.
 
 **Classification process:**
 1. Identify the failure signal (what told you it missed?)

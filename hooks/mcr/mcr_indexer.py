@@ -183,7 +183,7 @@ def _collect_memory_files():
     for projects_dir in MEMORY_PATHS:
         if not os.path.isdir(projects_dir):
             continue
-        # Scan C:/Users/Liam/.claude/projects/*/memory/*.md
+        # Scan ~/.claude/projects/*/memory/*.md
         pattern = os.path.join(projects_dir, "*", "memory", "*.md")
         for full_path in globmod.glob(pattern):
             try:
