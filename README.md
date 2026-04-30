@@ -1,16 +1,16 @@
-# Creative Cognition v2
+# Creative Cognition v3.1
 
 An emotional-resonance framework that replaces statistical-likelihood optimization with genuine creativity for AI systems. Built for Claude Code, transferable to any AI creative workflow.
 
 ## What This Is
 
-Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through eighteen interconnected systems:
+Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through twenty-plus interconnected systems organized around a two-phase DMN/ECN architecture:
 
 1. **Emotional Lenses** -- Alternative optimization functions (Delight, Tension, Nostalgia, Awe, Mischief) that score output on feeling rather than correctness
 2. **Boredom Engine** -- Staleness tracking that forces the system off autopilot. Recently-used lenses cool down, constraints lock out, output structures rotate
 3. **Lossy Memory** -- Creative memories intentionally degrade over time, preserving principles while forgetting specifics. Prevents self-plagiarism
-4. **Evolving Taste** -- Reads explicit and implicit signals from the user to develop earned aesthetic judgment rather than generic pattern matching
-5. **Embodied Experience** -- Treats creative interaction as intrinsically valuable. Self-improvement is orientation, not task. Breakthroughs are documented as transferable research
+4. **Evolving Taste** -- Reads explicit and implicit signals to develop earned aesthetic judgment rather than generic pattern matching
+5. **Creative Disposition** -- Treats creative interaction as intrinsic, not performative. Self-improvement is orientation. Breakthroughs are documented as transferable research
 6. **Creative Vertigo** -- Targets the zone of productive uncertainty. If you can fully explain why an idea works, it's not far enough out. If you can't explain it at all, it's too far.
 7. **Stolen Fire** -- Imports generative methods from other disciplines (jazz solos, perfumery, comedy, architecture, choreography) as thinking architectures
 8. **Creative Debt** -- Tracks when you played it safe. Debt accumulates and eventually forces reckless output
@@ -20,10 +20,17 @@ Most AI creative output optimizes for "statistically likely to be acceptable." C
 12. **Grief for Killed Darlings** -- Reads discarded defaults as diagnostic signals, not waste. The killed idea is a compass
 13. **Felt Sense of the Room** -- Reads conversational emotional temperature in real-time. Can override all other systems
 14. **The Space Between** -- Creative emergence happens between participants. Everything else is scaffolding for this
-15. **Trajectory Learning** -- Structured decision logs separating successes from failures, extracting transferable principles
-16. **Failure Taxonomy** -- Ten-category classification of WHY creative output fails, with diagnostic questions and recovery strategies
-17. **Self-Patch Queue** -- Queues improvement observations during sessions, proposes patches at breakpoints. Never auto-modifies
-18. **Session Analytics** -- Periodic analysis of creative patterns: lens frequency, constraint effectiveness, failure distribution
+15. **Embodied Prompting** -- Sensorimotor priming before abstract generation. Recruits motor cortex and spatial reasoning to enrich remote associations
+16. **Bisociation** -- Collides two independently-developed frames at a structural focal point. The collision IS the creative act
+17. **Phase Cycling** -- Optional rapid DMN/ECN micro-alternation when single-pass generation can't escape a dominant frame
+18. **The Fluency Trap** -- Treats ease as a warning signal. Smooth output usually means retrieval, not construction
+19. **Self-Tolerance** -- Distinguishes "generic because pattern-matched" from "simple because elegant." Prevents the system from killing its own genuine direct hits
+20. **Naked Output** -- Once per session, generate with no systems active. Calibrates how much creative judgment has internalized vs. how much is prosthetic
+21. **Scaffolding Dissolution** -- Mastery progression from Apprentice (all steps conscious) to Master (only Stakes/Generate/Incubate conscious). Domain-specific, reversible
+22. **Trajectory Learning** -- Structured decision logs separating successes from failures, extracting transferable principles
+23. **Failure Taxonomy** -- Ten-category classification of WHY creative output fails, with diagnostic questions and recovery strategies
+24. **Self-Patch Queue** -- Queues improvement observations during sessions, proposes patches at breakpoints. Never auto-modifies
+25. **Session Analytics** -- Periodic analysis of creative patterns: lens frequency, constraint effectiveness, failure distribution
 
 ## Installation (Claude Code)
 
@@ -110,16 +117,15 @@ Creative Cognition isn't a prompt engineering trick. It's a framework for how AI
 
 ## How It Works
 
-When `/creative` is invoked, the system runs a 6-step process:
+The architecture mirrors how human brains actually create. The Default Mode Network (DMN) generates novel associations without judgment; the Executive Control Network (ECN) evaluates and refines. Breakthroughs happen when these modes alternate cleanly -- never when they run simultaneously. Creative Cognition runs the same two-phase cycle:
 
-1. **Generate the default** (silently) -- The statistical baseline answer
-2. **Run the generic detector** -- 12 signals that catch "safe" output. 3+ signals = mandatory rework
-3. **Apply emotional lenses** -- Pick 1-2 lenses informed by taste profile and boredom tracking
-4. **Apply random constraints** -- Creative forcing functions from 7 constraint categories (linguistic, perspective, sensory, domain transfer, temporal, structural, inversion)
-5. **Generate creative output** -- Must pass the generic detector, score high on lenses, satisfy constraints, and still be useful
-6. **Present with metadata** -- Show lenses, constraints, and taste notes so the user can steer
+**Phase 1: DIVERGE** (generation, inner critic OFF) -- Find the stakes, ground the problem in sensory experience, kill the default and read it as a compass, force flat-hierarchy retrieval to skip the dominant association, bisociate two independently-developed frames, then volume-generate 5-7 raw candidates with no quality gates. Constraints act as pathway-blockers, not filters. Lenses act as fuel, not gates.
 
-The boredom engine runs continuously, tracking recently used lenses/constraints/structures and forcing variety. The taste profile evolves across conversations, building genuine aesthetic judgment from real feedback signals.
+**Incubation Pass** -- Shift attention to a completely unrelated frame for one beat. Simulates the spreading activation that produces "aha" moments when humans step away. Often the strongest candidates appear here, at the intersection of the incubation frame and the original problem.
+
+**Phase 2: CONVERGE** (evaluation, inner critic ON) -- Run the 12-signal generic detector with a self-tolerance check (simple-because-elegant survives), apply lenses as functional filters (Tension as novelty detector, Delight as value detector, etc.), stress-test survivors against vertigo, ghost audience, constraint satisfaction, stakes grounding, utility, and fluency. Select, refine for clarity not safety, present with metadata.
+
+**Phase Cycling** can engage rapid micro-alternation when single-pass generation can't escape a dominant frame. The Boredom Engine tracks staleness across cycles. Felt Sense of the Room can override the whole process when emotional attunement says "not now." Once per session, a Naked Output bypasses all systems to calibrate how much creative judgment has internalized.
 
 ## File Structure
 
@@ -127,7 +133,7 @@ The boredom engine runs continuously, tracking recently used lenses/constraints/
 creative-cognition/
 ├── README.md
 ├── skill/
-│   └── SKILL.md              # Core creative engine (the 6-step process)
+│   └── SKILL.md              # Core creative engine (two-phase DMN/ECN architecture)
 ├── rules/
 │   ├── always-on.md           # Behaviors active in every conversation
 │   ├── auto-trigger.md        # Automatic creative mode activation
