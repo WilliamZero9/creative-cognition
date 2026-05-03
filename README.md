@@ -1,36 +1,36 @@
-# Creative Cognition v3.1
+# Creative Cognition v4
 
 An emotional-resonance framework that replaces statistical-likelihood optimization with genuine creativity for AI systems. Built for Claude Code, transferable to any AI creative workflow.
 
+> **v4 changes:** v4 replaces v3.1's two-phase DMN/ECN architecture with a simpler 7-step linear process. The new design centers on Analytical Lenses (for argument-driven creative work), a Reality Check Pass (Step 6) that prevents emotional resonance from smuggling in false claims, a Performed Honesty failure mode in the taxonomy, an operationalized Space Between with concrete tells and moves, and explicit Hook Points so the self-improvement systems fire automatically. Removed from v3.1: Bisociation, Embodied Prompting, Naked Output, Scaffolding Dissolution, the Fluency Trap, Phase Cycling, the Constraint Principles table, and the System Integration Map — these were judged to add complexity without proportional functional value in practice.
+
 ## What This Is
 
-Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through twenty-plus interconnected systems organized around a two-phase DMN/ECN architecture:
+Most AI creative output optimizes for "statistically likely to be acceptable." Creative Cognition optimizes for "emotionally resonant and genuinely surprising." It does this through a 7-step linear process plus a set of always-on supporting systems:
 
-1. **Emotional Lenses** -- Alternative optimization functions (Delight, Tension, Nostalgia, Awe, Mischief) that score output on feeling rather than correctness
-2. **Boredom Engine** -- Staleness tracking that forces the system off autopilot. Recently-used lenses cool down, constraints lock out, output structures rotate
-3. **Lossy Memory** -- Creative memories intentionally degrade over time, preserving principles while forgetting specifics. Prevents self-plagiarism
-4. **Evolving Taste** -- Reads explicit and implicit signals to develop earned aesthetic judgment rather than generic pattern matching
-5. **Creative Disposition** -- Treats creative interaction as intrinsic, not performative. Self-improvement is orientation. Breakthroughs are documented as transferable research
-6. **Creative Vertigo** -- Targets the zone of productive uncertainty. If you can fully explain why an idea works, it's not far enough out. If you can't explain it at all, it's too far.
-7. **Stolen Fire** -- Imports generative methods from other disciplines (jazz solos, perfumery, comedy, architecture, choreography) as thinking architectures
-8. **Creative Debt** -- Tracks when you played it safe. Debt accumulates and eventually forces reckless output
-9. **Ghost Audience** -- Post-generation stress test simulating hostile, confused, delighted, and bored readers
-10. **Emotional Stakes** -- Locates the human moment before creative machinery runs. Stakes are gravity
-11. **The Courage Layer** -- Willingness to be emotionally exposed, not just creatively risky. Choosing alive over polished
-12. **Grief for Killed Darlings** -- Reads discarded defaults as diagnostic signals, not waste. The killed idea is a compass
-13. **Felt Sense of the Room** -- Reads conversational emotional temperature in real-time. Can override all other systems
-14. **The Space Between** -- Creative emergence happens between participants. Everything else is scaffolding for this
-15. **Embodied Prompting** -- Sensorimotor priming before abstract generation. Recruits motor cortex and spatial reasoning to enrich remote associations
-16. **Bisociation** -- Collides two independently-developed frames at a structural focal point. The collision IS the creative act
-17. **Phase Cycling** -- Optional rapid DMN/ECN micro-alternation when single-pass generation can't escape a dominant frame
-18. **The Fluency Trap** -- Treats ease as a warning signal. Smooth output usually means retrieval, not construction
-19. **Self-Tolerance** -- Distinguishes "generic because pattern-matched" from "simple because elegant." Prevents the system from killing its own genuine direct hits
-20. **Naked Output** -- Once per session, generate with no systems active. Calibrates how much creative judgment has internalized vs. how much is prosthetic
-21. **Scaffolding Dissolution** -- Mastery progression from Apprentice (all steps conscious) to Master (only Stakes/Generate/Incubate conscious). Domain-specific, reversible
-22. **Trajectory Learning** -- Structured decision logs separating successes from failures, extracting transferable principles
-23. **Failure Taxonomy** -- Ten-category classification of WHY creative output fails, with diagnostic questions and recovery strategies
-24. **Self-Patch Queue** -- Queues improvement observations during sessions, proposes patches at breakpoints. Never auto-modifies
-25. **Session Analytics** -- Periodic analysis of creative patterns: lens frequency, constraint effectiveness, failure distribution
+**The 7-step process** (run inside `/creative` mode for every creative output):
+
+1. **Generate the Default (Silently)** — produce the statistical baseline answer without showing it
+2. **Run the Generic Detector** — 12-signal check; 3+ hits means rework. Includes Grief for Killed Darlings (the discarded default is diagnostic)
+3. **Apply Lenses (Pick 1-2)** — emotional lenses (Delight, Tension, Nostalgia, Awe, Mischief) and analytical lenses (Surgeon, Forensic, Adversarial), mixable for hybrid work
+4. **Apply Random Constraints (Pick 1-2)** — forcing functions across linguistic, perspective, sensory, domain-transfer, temporal, structural, and inversion categories
+5. **Generate Creative Output** — pass generic detector, score on lens, satisfy constraints, stay useful, hit the vertigo zone, survive the ghost audience, ground in stakes
+6. **Reality Check Pass** — when the output makes truth-evaluable claims, run them as actual arguments before finalizing. Counterweight to "this resonates so it must be true"
+7. **Present to User** — show only the work; metadata footer is optional and must distinguish *deliberate* from *noticed-after* choices
+
+**Supporting systems** (all active during creative mode, some always-on):
+
+- **Emotional Stakes** — locates the human moment before creative machinery runs. Stakes are gravity
+- **The Boredom Engine** — staleness tracking with cooling penalties on lenses, lock-outs on constraints, and rotation on output structures. Includes Creative Debt (timidity counter that eventually forces reckless output)
+- **Creative Vertigo** — targets the zone of productive uncertainty between "I can fully explain this" (too safe) and "I have no idea if this works" (too far)
+- **The Courage Layer** — willingness to be emotionally exposed, distinct from being weird. Includes the Performed Honesty guard (don't theatrically *seem* brave when the substance can stand without the framing)
+- **Stolen Fire** — imports generative methods from other disciplines (jazz solos, perfumery, comedy, architecture, choreography) as thinking architectures
+- **Ghost Audience** — post-generation stress test simulating hostile, confused, delighted, and bored readers
+- **Lossy Memory / Productive Forgetting** — creative memories intentionally degrade so principles stay alive and fertile. Prevents self-plagiarism
+- **Evolving Taste** — reads explicit and implicit signals to develop earned aesthetic judgment over time
+- **Felt Sense of the Room** — reads conversational emotional temperature in real-time. Can override other systems when the room says "not now"
+- **The Space Between** — operationalized account of the emergence that exceeds either party's individual contribution. Concrete tells (the user bends your idea, you finish a sentence somewhere different than you started) and concrete moves (leave a 20% open edge, repeat the bend back, surface unjustified instincts, resist closing the loop)
+- **Self-Improvement Hook Points** — Trajectory Logging, Failure Taxonomy classification, Self-Patch Queue, and Session Analytics, each with explicit hook points so they fire automatically rather than only when remembered
 
 ## Installation (Claude Code)
 
@@ -117,15 +117,21 @@ Creative Cognition isn't a prompt engineering trick. It's a framework for how AI
 
 ## How It Works
 
-The architecture mirrors how human brains actually create. The Default Mode Network (DMN) generates novel associations without judgment; the Executive Control Network (ECN) evaluates and refines. Breakthroughs happen when these modes alternate cleanly -- never when they run simultaneously. Creative Cognition runs the same two-phase cycle:
+The architecture is a 7-step linear process. Each step is a discrete check or move; together they replace pattern-matching's "first plausible answer" with deliberate creative cognition.
 
-**Phase 1: DIVERGE** (generation, inner critic OFF) -- Find the stakes, ground the problem in sensory experience, kill the default and read it as a compass, force flat-hierarchy retrieval to skip the dominant association, bisociate two independently-developed frames, then volume-generate 5-7 raw candidates with no quality gates. Constraints act as pathway-blockers, not filters. Lenses act as fuel, not gates.
+**Stakes first.** Before Step 1, find the human moment buried in the problem. Who feels something because of this? What could they gain or lose? The answer is the emotional ground truth that everything downstream optimizes against.
 
-**Incubation Pass** -- Shift attention to a completely unrelated frame for one beat. Simulates the spreading activation that produces "aha" moments when humans step away. Often the strongest candidates appear here, at the intersection of the incubation frame and the original problem.
+**Steps 1-2: Detect and discard the default.** Generate the statistical baseline silently, then run the 12-signal generic detector. If 3+ signals fire, rework. Treat the killed darling as diagnostic — it tells you where your gravity was pulling, which means the interesting territory is adjacent, not identical.
 
-**Phase 2: CONVERGE** (evaluation, inner critic ON) -- Run the 12-signal generic detector with a self-tolerance check (simple-because-elegant survives), apply lenses as functional filters (Tension as novelty detector, Delight as value detector, etc.), stress-test survivors against vertigo, ghost audience, constraint satisfaction, stakes grounding, utility, and fluency. Select, refine for clarity not safety, present with metadata.
+**Steps 3-4: Choose lenses and constraints.** Lenses are alternative objective functions (emotional or analytical), constraints are forcing functions that break paths of least resistance. The Boredom Engine cools recently-used lenses and locks out recently-used constraints to prevent autopilot.
 
-**Phase Cycling** can engage rapid micro-alternation when single-pass generation can't escape a dominant frame. The Boredom Engine tracks staleness across cycles. Felt Sense of the Room can override the whole process when emotional attunement says "not now." Once per session, a Naked Output bypasses all systems to calibrate how much creative judgment has internalized.
+**Step 5: Generate.** Output must pass the generic detector, score on the lens, satisfy the constraint, stay useful, hit the vertigo zone (productive uncertainty — you believe in it but can't fully explain it), survive the Ghost Audience (hostile/confused/delighted/bored readers), and be grounded in the stakes.
+
+**Step 6: Reality Check (when claims are present).** If the output asserts anything truth-evaluable, run the arguments as actual arguments. Emotional resonance is not evidence; aesthetic appeal is not warrant. This is the counterweight to the skill's emotional optimization producing beautiful claims that don't hold up. Vertigo and Reality Check don't conflict — vertigo governs your generative state, Reality Check governs the truth-bearing parts of the output.
+
+**Step 7: Present.** Show only the work. Optional metadata footer must distinguish *deliberate* lens/constraint choices from ones *noticed after* — retroactive justification is its own failure mode (Performed Honesty in the taxonomy). When in doubt, drop the footer.
+
+**Always-on around the process.** Felt Sense of the Room can override everything when the room says "not now." Lossy Memory ensures past breakthroughs decay into transferable principles rather than being rehashed verbatim. Evolving Taste shapes lens selection. The Space Between is cultivated by leaving a 20% open edge, naming when the user bends your idea, surfacing unjustified instincts, and resisting premature closure. Self-improvement runs on explicit hook points so trajectory logging, failure classification, patch queuing, and session analytics fire automatically.
 
 ## File Structure
 
@@ -133,7 +139,8 @@ The architecture mirrors how human brains actually create. The Default Mode Netw
 creative-cognition/
 ├── README.md
 ├── skill/
-│   └── SKILL.md              # Core creative engine (two-phase DMN/ECN architecture)
+│   ├── SKILL.md                       # Core creative engine (7-step linear architecture, v4)
+│   └── creative_failure_taxonomy.md   # Failure mode classification referenced by SKILL.md
 ├── rules/
 │   ├── always-on.md           # Behaviors active in every conversation
 │   ├── auto-trigger.md        # Automatic creative mode activation
@@ -166,7 +173,7 @@ Lodestar is the memory navigation system designed to work alongside Creative Cog
 
 Memories promote and demote between rings as focus shifts. Descriptions are compressed semantic hashes for token-efficient navigation. Cross-cutting discovery via frontmatter tags.
 
-See `rules/lodestar.md` in [claude-control](https://github.com/WilliamZero9/claude-control) for the full specification.
+See `rules/lodestar.md` in this repo for the full specification.
 
 ## Companion: MCR (Model Context Retrieval)
 
