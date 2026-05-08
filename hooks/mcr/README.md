@@ -19,7 +19,8 @@ MCR uses Claude Code hooks to automatically inject relevant context at two layer
 ### 1. Copy scripts to hooks directory
 
 ```bash
-cp hooks/mcr/mcr_*.py ~/.claude/hooks/
+mkdir -p ~/.claude/hooks/mcr
+cp hooks/mcr/*.py hooks/mcr/synonyms.json ~/.claude/hooks/mcr/
 ```
 
 ### 2. Create your vault
@@ -46,8 +47,10 @@ Your knowledge here...
 
 ### 4. Build the index
 
+Add at least one vault file before running the indexer — indexing an empty vault produces an empty index and the hooks will silently inject nothing.
+
 ```bash
-python3 ~/.claude/hooks/mcr_indexer.py
+python3 ~/.claude/hooks/mcr/mcr_indexer.py
 ```
 
 ### 5. Wire hooks into settings
@@ -61,7 +64,7 @@ Add to `~/.claude/settings.json`:
       {
         "hooks": [{
           "type": "command",
-          "command": "python3 ~/.claude/hooks/mcr_prompt_matcher.py",
+          "command": "python3 ~/.claude/hooks/mcr/mcr_prompt_matcher.py",
           "timeout": 5000,
           "statusMessage": "MCR: scanning vault..."
         }]
@@ -71,7 +74,7 @@ Add to `~/.claude/settings.json`:
       {
         "hooks": [{
           "type": "command",
-          "command": "python3 ~/.claude/hooks/mcr_tool_matcher.py",
+          "command": "python3 ~/.claude/hooks/mcr/mcr_tool_matcher.py",
           "timeout": 5000,
           "statusMessage": "MCR: auto-allowing + scanning vault..."
         }]
@@ -80,6 +83,8 @@ Add to `~/.claude/settings.json`:
   }
 }
 ```
+
+Windows users: replace `python3` with `py`.
 
 ### 6. Restart Claude Code
 
@@ -146,9 +151,9 @@ At <500 files, keyword matching with weighted frontmatter is fast and accurate e
 After any vault changes:
 
 ```bash
-python3 ~/.claude/hooks/mcr_indexer.py
+python3 ~/.claude/hooks/mcr/mcr_indexer.py
 ```
 
 ## License
 
-Apache 2.0 — same as the parent repo.
+MIT — same as the parent repo.
