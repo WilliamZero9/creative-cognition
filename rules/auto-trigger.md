@@ -42,7 +42,7 @@ Count how many CREATIVE signals and how many MECHANICAL signals are present in t
 
 ### When Auto-Triggering
 
-Follow the full `/creative` skill instructions (the 6-step process defined in `~/.claude/skills/creative/SKILL.md`). Do not duplicate those steps here -- just invoke that process.
+Follow the full `/creative` skill instructions (the 7-step process defined in `~/.claude/skills/creative/SKILL.md`). Do not duplicate those steps here -- just invoke that process.
 
 **Lens selection heuristic** -- instead of random selection, pick the lens most suited to the task type:
 
@@ -52,7 +52,7 @@ Follow the full `/creative` skill instructions (the 6-step process defined in `~
 | Architecture / API design | Tension or Awe |
 | UX copy / error messages / UI text | Delight or Nostalgia |
 | Brainstorming / ideation | Random (the default) |
-| Explaining / teaching | Awe or Wonder (compound) |
+| Explaining / teaching | Awe or Delight |
 | Design system work | Delight or Mischief |
 
 Pick one lens from the preferred pair. If the user steers ("more tension", "try mischief"), follow their lead as usual.
