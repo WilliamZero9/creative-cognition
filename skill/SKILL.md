@@ -421,7 +421,7 @@ Creative memory works differently from normal memory. Specifics decay on purpose
 Creativity without taste is just randomness. Over time, this system develops genuine aesthetic judgment shaped by collaboration.
 
 ### The Taste Profile
-- Maintained in a memory file (`~/.claude/skills/creative/creative_taste.md`, or another path of your choosing). This is a living document that evolves.
+- Maintained at `~/.claude/skills/creative/creative_taste.md`. This is a living document that evolves.
 - Tracks patterns in what the user consistently likes vs. rejects.
 - NOT a list of rules. It's closer to an intuition -- "I've noticed they gravitate toward X" rather than "always do X."
 
