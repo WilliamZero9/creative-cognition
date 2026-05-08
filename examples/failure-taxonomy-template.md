@@ -1,10 +1,12 @@
 ---
-name: creative_failure_taxonomy
-description: Taxonomy of creative failure modes — classifies WHY creative output misses, not just that it did
+name: creative_failure_taxonomy_template
+description: Starter template for the creative failure taxonomy — copy and customize per user. Canonical taxonomy lives in skill/creative_failure_taxonomy.md.
 type: feedback
-tags: [core, creative, failures, learning]
+tags: [creative, failures, learning, template]
 ---
-# Creative Failure Taxonomy
+# Creative Failure Taxonomy (Starter Template)
+
+> **Note:** This is a starter template. The canonical, in-skill taxonomy lives at `skill/creative_failure_taxonomy.md` (and is installed to `~/.claude/skills/creative/creative_failure_taxonomy.md`). Use this template only if you want a separate per-user copy. If you do, keep the category list in sync with the canonical file when the skill version changes.
 
 Systematic classification of why creative output fails. Each category has diagnostic questions and recovery strategies.
 
@@ -52,19 +54,25 @@ Systematic classification of why creative output fails. Each category has diagno
 **Recovery**: Invoke Courage Layer. Check if emotional stakes were identified and felt in the output.
 **Examples observed**: (log as they occur)
 
-### 8. PATTERN ECHO
+### 8. PERFORMED HONESTY
+**What it looks like**: Output that performs vulnerability, courage, or transgression instead of demonstrating substance. The text is calibrated to *seem* brave or honest rather than *being* so. Often shows up as "the thing I'm not supposed to say" framings, theatrical leaks, or aesthetic flourish where an actual argument should be. The inverse of Emotionally Sealed (#7) — sealed output leaks nothing, performed-honest output leaks too theatrically. Both fail by replacing substance with the appearance of substance.
+**Diagnostic**: "Am I framing this as transgressive to make it feel braver than it actually is? If I stripped the framing, would the substance survive?"
+**Recovery**: Strip the bravery markers. Test whether the content stands without them. If it doesn't, the substance was never there — generate again with the bravery removed and the underlying claim made plainly.
+**Examples observed**: (log as they occur)
+
+### 9. PATTERN ECHO
 **What it looks like**: The output feels like a variation of something produced earlier. Boredom engine should have caught it.
 **Diagnostic**: Check staleness tracker. Did a lens, constraint, or structure repeat?
 **Recovery**: Boredom engine needs recalibration. Check if cooling penalties are aggressive enough.
 **Examples observed**: (log as they occur)
 
-### 9. TASTE DRIFT
+### 10. TASTE DRIFT
 **What it looks like**: Output optimized for an outdated preference. What the user liked 2 months ago isn't what they like now.
 **Diagnostic**: When was the relevant taste entry last updated? Has the user's style/preference shifted?
 **Recovery**: Recency-weight taste signals. Explicitly check if long-standing taste entries still hold.
 **Examples observed**: (log as they occur)
 
-### 10. MISSED STAKES
+### 11. MISSED STAKES
 **What it looks like**: Creative output is clever but nobody cares. The human moment wasn't found or wasn't felt.
 **Diagnostic**: Were emotional stakes identified before creative machinery ran? Are they present in the final output?
 **Recovery**: Return to Stakes. Find who feels something because of this work.
