@@ -8,7 +8,7 @@ aliases: [why it failed, failure categories, creative misses]
 ---
 # Creative Failure Taxonomy
 
-Systematic classification of why creative output fails. Each category has diagnostic questions and recovery strategies. Referenced by the v4 Creative Engine — see `SKILL.md` Step 6 (Reality Check Pass), the Courage Layer's Performed Honesty note, and the Self-Improvement section's Failure Taxonomy hook points.
+Systematic classification of why creative output fails. Each category has diagnostic questions and recovery strategies.
 
 ## Failure Categories
 
@@ -28,13 +28,15 @@ Systematic classification of why creative output fails. Each category has diagno
 **What it looks like**: The type of system/idea proposed doesn't match the user's mental model of how things should work.
 **Diagnostic**: Does the proposal match the user's preference patterns in the taste profile?
 **Recovery**: Check taste profile. Update if this reveals a new preference axis.
-**Examples observed**: (none yet)
+**Examples observed**:
+- 2026-04-09: Uncomfortable Shelf rejected — accumulation model vs. user's preference for behavior-altering systems
 
 ### 4. REDUNDANT MECHANISM
 **What it looks like**: The idea duplicates something that already exists, just in different packaging.
 **Diagnostic**: Does this overlap significantly with an existing system, constraint, or lens?
 **Recovery**: Before proposing new systems, check existing ones for overlap. Novel should mean genuinely novel.
-**Examples observed**: (none yet)
+**Examples observed**:
+- 2026-04-09: Collision Engine rejected — overlaps with what constraints + lenses already do
 
 ### 5. WRONG LENS
 **What it looks like**: The emotional register was mismatched to the task.
@@ -55,13 +57,10 @@ Systematic classification of why creative output fails. Each category has diagno
 **Examples observed**: (none yet)
 
 ### 8. PERFORMED HONESTY
-**What it looks like:** Output that performs vulnerability, courage, or transgression instead of demonstrating substance. The text is calibrated to *seem* brave or honest rather than *being* so. Often shows up as "the thing I'm not supposed to say" framings, theatrical leaks, or aesthetic flourish where an actual argument should be. The inverse of Emotionally Sealed (#7) — sealed output leaks nothing, performed-honest output leaks too theatrically. Both fail by replacing substance with the appearance of substance.
-
-**Diagnostic:** "Am I framing this as transgressive to make it feel braver than it actually is? If I stripped the framing, would the substance survive?"
-
-**Recovery:** Strip the bravery markers. Test whether the content stands without them. If it doesn't, the substance was never there — generate again with the bravery removed and the underlying claim made plainly.
-
-**Examples observed:** (none yet)
+**What it looks like**: Output that performs vulnerability, courage, or transgression instead of demonstrating substance. The text is calibrated to *seem* brave or honest rather than *being* so. Often shows up as "the thing I'm not supposed to say" framings, theatrical leaks, or aesthetic flourish where an actual argument should be. The inverse of Emotionally Sealed (#7) — sealed output leaks nothing, performed-honest output leaks too theatrically. Both fail by replacing substance with the appearance of substance.
+**Diagnostic**: "Am I framing this as transgressive to make it feel braver than it actually is? If I stripped the framing, would the substance survive?"
+**Recovery**: Strip the bravery markers. Test whether the content stands without them. If it doesn't, the substance was never there — generate again with the bravery removed and the underlying claim made plainly.
+**Examples observed**: (none yet)
 
 ### 9. PATTERN ECHO
 **What it looks like**: The output feels like a variation of something produced earlier. Boredom engine should have caught it.
@@ -85,8 +84,15 @@ Systematic classification of why creative output fails. Each category has diagno
 - (Accumulate observations here about which failure modes co-occur, which are most common, and whether certain task types are prone to specific failures)
 
 ## Recovery Priority
-When multiple failure modes are detected:
-1. Wrong Timing (fix the when before the what)
-2. Missed Stakes (fix the why before the how)
-3. Wrong Model (fix the shape before the details)
-4. Everything else (refinement-level fixes)
+When multiple failure modes are detected, fix in this order (delivery before content, why before how, shape before detail):
+1. Wrong Timing (fix the *when* first)
+2. Wrong Temperature (fix the intensity calibration)
+3. Missed Stakes (fix the *why*)
+4. Wrong Model (fix the *shape*)
+5. Redundant Mechanism
+6. Wrong Lens
+7. Surface Only
+8. Emotionally Sealed
+9. Performed Honesty
+10. Pattern Echo
+11. Taste Drift

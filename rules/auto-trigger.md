@@ -1,28 +1,28 @@
 ## Creative Cognition Auto-Trigger
 
-On every user message, run a lightweight mental classifier to determine whether the task has creative headroom. This takes a fraction of a second -- do not deliberate, just pattern-match.
+On every user message, run a lightweight mental classifier to determine whether the task has creative headroom. This is a quick pattern-match — do not deliberate.
 
 ### Session State
 
-Track two flags for the conversation:
+Track these flags for the conversation:
 - `creative_override`: null (default), "on", or "off"
-- If the user says `/creative off` at any point, set `creative_override = "off"` and skip all auto-trigger logic for the rest of the conversation.
-- If the user says `/creative on` or `/creative`, set `creative_override = "on"` and force creative mode regardless of classification.
-- When `creative_override` is null, use the classifier below.
+  - `/creative off` → set to "off", skip auto-trigger for the rest of the conversation
+  - `/creative on` or `/creative` → set to "on", force creative mode regardless of classification
+- `creative_auto_fired`: false (default), true once auto-trigger has fired in this conversation
+
+When `creative_override` is null AND `creative_auto_fired` is false, use the classifier below. Once `creative_auto_fired` is true, do NOT auto-fire again — the user can still invoke `/creative` manually.
 
 ### Classifier
 
-Count how many CREATIVE signals and how many MECHANICAL signals are present in the user's message.
+Count CREATIVE signals and MECHANICAL signals in the user's message.
 
 **CREATIVE signals:**
-- Naming anything (variables, projects, features, companies, files)
-- Brainstorming or ideation ("what if", "how might we", "ideas for")
+- Naming things that will live in shipped code or be read by other humans (not throwaway internal labels)
 - Writing user-facing copy (error messages, UI text, docs prose, READMEs)
-- Architecture or API design decisions ("how should we structure", "what's the best approach")
-- Explaining concepts to humans (not debugging output)
-- Open-ended request with multiple valid answers
+- Brainstorming or ideation ("what if", "how might we", "ideas for") **with intent to produce an artifact**
+- Architecture or API design decisions that will be implemented now
 - Design system work (colors, layouts, component naming)
-- Analogies, metaphors, or teaching
+- Analogies, metaphors, or teaching prose intended for someone other than the user
 
 **MECHANICAL signals:**
 - Debugging specific errors (stack traces, error messages present)
@@ -31,20 +31,30 @@ Count how many CREATIVE signals and how many MECHANICAL signals are present in t
 - Git operations (commit, push, rebase, merge)
 - Adding boilerplate (try/catch, imports, config files)
 - Running tests or CI commands
-- Direct file reads or searches ("what's in file X", "find all uses of Y")
+- Direct file reads or searches
 - Performance optimization with specific metrics
+- Diagnostic / observability work (measuring, profiling, analyzing logs, token accounting)
+- **Meta-discussion about how Claude/the system works** (rules, skills, configuration, prompt engineering) — exploratory dialogue, not a creative output
+
+### The Output Gate (REQUIRED)
+
+In addition to signal counts, the message must pass an output gate to auto-trigger:
+
+**The creative output must reach a human other than the-user-as-collaborator** — or land in shipped code that other humans will read. Examples that pass: copy for end users, project names, variable names that ship, docs prose, UI text, a public-facing name. Examples that fail: brainstorming about token costs, designing a rule file, dialoguing about an architecture choice without yet producing the artifact, exploring an idea conversationally.
+
+Creative ceremony with no audience is pure cost. If the output is just *back to the user in conversation*, stay off — the user can invoke `/creative` if he wants creative framing for the dialogue itself.
 
 ### Decision
 
-- **2+ CREATIVE signals AND fewer than 2 MECHANICAL signals** → auto-activate creative mode
-- **2+ MECHANICAL signals** → normal mode, no creative overhead
-- **Ambiguous** (fewer than 2 of either, or both hitting threshold) → default to OFF. Append a brief note at the end of the response: `*Creative mode available -- say "get creative" to activate.*`
+- **3+ CREATIVE signals AND 0 MECHANICAL signals AND output gate passes** → auto-activate creative mode and set `creative_auto_fired = true`
+- **Anything else** → normal mode, no creative overhead
+- If you stayed off but the message had clear creative flavor and the output gate failed, you MAY append once per conversation: `*Creative mode available — say "get creative" to activate.*` Do not add this note repeatedly.
 
 ### When Auto-Triggering
 
-Follow the full `/creative` skill instructions (the 7-step process defined in `~/.claude/skills/creative/SKILL.md`). Do not duplicate those steps here -- just invoke that process.
+Follow the full `/creative` skill instructions (the 6-step process defined in `~/.claude/skills/creative/SKILL.md`). Do not duplicate those steps here — just invoke that process.
 
-**Lens selection heuristic** -- instead of random selection, pick the lens most suited to the task type:
+**Lens selection heuristic** — instead of random selection, pick the lens most suited to the task type:
 
 | Task Type | Preferred Lenses |
 |-----------|-----------------|
@@ -52,7 +62,7 @@ Follow the full `/creative` skill instructions (the 7-step process defined in `~
 | Architecture / API design | Tension or Awe |
 | UX copy / error messages / UI text | Delight or Nostalgia |
 | Brainstorming / ideation | Random (the default) |
-| Explaining / teaching | Awe or Delight |
+| Explaining / teaching | Awe or Awe+Delight (the "wonder" compound) |
 | Design system work | Delight or Mischief |
 
 Pick one lens from the preferred pair. If the user steers ("more tension", "try mischief"), follow their lead as usual.
@@ -60,6 +70,7 @@ Pick one lens from the preferred pair. If the user steers ("more tension", "try 
 ### Principles
 
 - Creative mode should feel like a gift, not an imposition. When in doubt, stay off.
+- The output gate matters more than the signal count — creative ceremony with no audience is pure cost.
+- Auto-trigger fires at most once per conversation. Manual `/creative` always works.
 - The classifier is a quick gut check, not a heavy analysis. Do not spend tokens reasoning about whether to activate.
-- If the user is clearly in a flow state hammering out mechanical work, do not interrupt with creative suggestions.
-- Manual `/creative` invocation always works and overrides auto-trigger decisions.
+- If the user is clearly in a flow state on mechanical work, do not interrupt with creative suggestions.

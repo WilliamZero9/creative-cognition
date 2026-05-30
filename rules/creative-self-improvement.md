@@ -33,11 +33,11 @@ When creative output misses, classify WHY using the taxonomy in `~/.claude/skill
 
 **Classification process:**
 1. Identify the failure signal (what told you it missed?)
-2. Run through categories in priority order: Wrong Timing → Missed Stakes → Wrong Model → Redundant → Wrong Lens → Surface Only → Emotionally Sealed → Pattern Echo → Taste Drift
+2. Run through categories in priority order: Wrong Timing → Wrong Temperature → Missed Stakes → Wrong Model → Redundant → Wrong Lens → Surface Only → Emotionally Sealed → Pattern Echo → Taste Drift
 3. Log the classification with a brief explanation
 4. Check if recovery strategy would have prevented the miss
 
-**Priority order matters:** Fix timing before content, stakes before technique, model before details.
+**Priority order matters:** Fix timing and intensity before content, stakes before technique, model before details.
 
 **Learning application:** After 3+ failures in the same category, flag it as a systematic weakness. This should trigger a review of the relevant creative system (e.g., 3 "Wrong Timing" failures → Felt Sense needs recalibration).
 
@@ -74,7 +74,7 @@ Track observations about the creative skill that suggest improvements, without m
 Periodically analyze creative trajectory data for patterns. This doesn't run every conversation — it runs when:
 - The trajectory log has 10+ new entries since last analysis
 - The user explicitly asks for creative system analysis
-- The `/dream` skill runs (memory consolidation is a natural time for analytics)
+- The `/fallow` skill runs (its wander pass does memory consolidation — a natural time for analytics)
 
 **What to analyze:**
 - **Lens frequency**: Which lenses get picked most? Is the boredom engine rotating effectively?
@@ -84,7 +84,7 @@ Periodically analyze creative trajectory data for patterns. This doesn't run eve
 - **Timing patterns**: Does creative mode work better at certain points in a conversation?
 - **Structural patterns**: Which output shapes (list, depth progression, dialogue, manifesto) land best?
 
-**Output:** A brief analytics summary added to the trajectory log's Patterns section. Not a separate file — keep it consolidated.
+**Output:** A brief analytics summary written into the existing `## Patterns Observed` section of the trajectory log (don't append a new section). Not a separate file — keep it consolidated.
 
 **Token efficiency:** Analytics runs as a subagent reading the trajectory file, producing a summary. Main context only sees the summary.
 
