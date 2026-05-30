@@ -2,7 +2,7 @@
 
 A framework for AI creativity that replaces statistical-likelihood optimization with emotional-resonance optimization. Built for Claude Code, transferable to any AI creative workflow.
 
-**Status:** v4 — stable. In daily use. Public so others can build on it.
+**Status:** Stable. In daily use. Public so others can build on it.
 
 ---
 
@@ -10,7 +10,7 @@ A framework for AI creativity that replaces statistical-likelihood optimization 
 
 Most AI creative output optimizes for "statistically likely to be acceptable." That's why the answers feel safe, predictable, and slightly dead — the model is reaching for the most-probable-good-enough completion.
 
-Creative Cognition optimizes for a different objective: emotional resonance. It treats the first plausible answer as a *symptom*, not the goal. Then it forces the model through a 7-step process that detects the default, discards it, applies an emotional or analytical lens, runs forcing-function constraints, generates fresh output, reality-checks any truth-claims, and presents the result.
+Creative Cognition optimizes for a different objective: emotional resonance. It treats the first plausible answer as a *symptom*, not the goal. Then it forces the model through a 6-step process that detects the default, discards it, applies an emotional or analytical lens, runs forcing-function constraints, generates fresh output, reality-checks any truth-claims, and presents the result.
 
 That sounds elaborate. It runs in seconds. The output is different in a way you feel before you can articulate it.
 
@@ -29,7 +29,17 @@ This is not a prompt-engineering trick. A trick is a sentence you paste. This is
 
 Prompts patch one output. This rewrites the objective function for the duration of the session.
 
-## The 7-step process
+## Does it actually work? (benchmark)
+
+> _Numbers pending a run — see method below. Paste the result line here after running `benchmark/run_benchmark.py`._
+
+Creativity has no objective unit, so this measures the honest thing: **how often a blind judge prefers creative-mode output over a plain baseline.** Same model answers each prompt twice (only the system prompt differs — plain assistant vs. `SKILL.md`), then a separate model picks the better answer **without knowing which side used the skill**.
+
+Honesty guards: prompts are [fixed up front](benchmark/prompts.json) (not cherry-picked), the judge is blind, every pair is judged in **both orders** to cancel position bias, and ties are allowed. Caveat stated plainly: generator and judge are the same provider, so the honest claim is *"preferred under a blind same-provider judge,"* not *"objectively better."*
+
+Reproduce it yourself in a few minutes — see [`benchmark/`](benchmark/).
+
+## The 6-step process
 
 Run inside `/creative` mode for every creative output:
 
@@ -38,8 +48,11 @@ Run inside `/creative` mode for every creative output:
 3. **Apply lenses (1–2).** Emotional: Delight, Tension, Nostalgia, Awe, Mischief. Analytical: Surgeon, Forensic, Adversarial. Mixable.
 4. **Apply constraints (1–2).** Forcing functions across linguistic, perspective, sensory, domain-transfer, temporal, structural, and inversion categories. Boredom engine locks out recently-used ones.
 5. **Generate.** Output must pass the detector, score on the lens, satisfy the constraint, hit the vertigo zone (productive uncertainty), and stay grounded in stakes.
-6. **Reality Check.** When the output makes truth-evaluable claims, run them as actual arguments. Counterweight to "this resonates so it must be true."
-7. **Present.** Show only the work. Optional metadata footer must distinguish *deliberate* from *noticed-after* choices.
+6. **Present.** Show only the work. Optional metadata footer must distinguish *deliberate* from *noticed-after* choices.
+
+Two passes run on the output between steps 5 and 6:
+- **Ghost Audience** — stress-test against hostile, confused, delighted, and bored readers.
+- **Reality Check** — when the output makes truth-evaluable claims, run them as actual arguments. The counterweight to "this resonates so it must be true."
 
 ## Supporting systems
 
@@ -55,6 +68,7 @@ Always active during creative mode; some always-on:
 - **Evolving Taste** — reads explicit and implicit signals, develops earned aesthetic judgment over time.
 - **Felt Sense of the Room** — reads conversational emotional temperature in real-time. Can override other systems when the room says "not now."
 - **The Space Between** — operationalized account of the emergence that exceeds either party's individual contribution. Concrete tells, concrete moves.
+- **Returns** — between-session incubation. Thoughts that surface "off the clock" get carried back and spoken at the start of the next session. Optional — needs an incubation pass (e.g. a fallow/wander system) to feed it.
 - **Self-Improvement Hook Points** — Trajectory Logging, Failure Taxonomy classification, Self-Patch Queue, Session Analytics. Fire automatically, not when remembered.
 
 Full specifications: [`skill/SKILL.md`](skill/SKILL.md).
@@ -135,7 +149,7 @@ Restart Claude Code after editing settings — hooks load at session start. Wind
 creative-cognition/
 ├── README.md
 ├── skill/
-│   ├── SKILL.md                       # Core engine (7-step v4 architecture)
+│   ├── SKILL.md                       # Core engine (6-step process + supporting systems)
 │   └── creative_failure_taxonomy.md   # 11-category failure classification
 ├── rules/
 │   ├── always-on.md                   # Behaviors active in every conversation
@@ -144,6 +158,10 @@ creative-cognition/
 │   └── lodestar.md                    # Companion memory navigation system
 ├── hooks/
 │   └── mcr/                           # Model Context Retrieval (optional)
+├── benchmark/
+│   ├── run_benchmark.py               # Blind A/B win-rate harness
+│   ├── prompts.json                   # 25 fixed neutral creative prompts
+│   └── README.md                      # Method, honesty guards, how to run
 └── examples/
     ├── taste-profile-template.md      # Your evolving aesthetic profile
     ├── trajectory-log-template.md     # Decision log

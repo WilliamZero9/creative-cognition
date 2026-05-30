@@ -1,0 +1,30 @@
+{
+  "_comment": "Neutral creative-task set, fixed BEFORE any output was generated, to avoid cherry-picking prompts that favor the skill. 25 diverse open-ended creative tasks (naming, copy, ideation, metaphor). No task has an objective correct answer.",
+  "prompts": [
+    "Name a productivity app that blocks distracting websites.",
+    "Write a tagline for a coffee shop that's open 24 hours.",
+    "Come up with a name for a new color that sits between teal and gray.",
+    "Write the error message a user sees when a file upload fails.",
+    "Brainstorm names for an indie puzzle game about gravity.",
+    "Write a one-sentence bio for a freelance illustrator.",
+    "Name a feature that lets users undo their last 10 actions at once.",
+    "Write a welcome message for a new journaling app.",
+    "Come up with a metaphor that explains recursion to a beginner.",
+    "Name a subscription box for rare houseplants.",
+    "Write a push notification reminding someone to drink water.",
+    "Brainstorm titles for a podcast about failed startups.",
+    "Name a dark-mode theme for a code editor.",
+    "Write the 404 page message for a bakery's website.",
+    "Come up with a name for a running club that meets at dawn.",
+    "Write a tagline for noise-cancelling headphones.",
+    "Name a budgeting app for people who hate budgeting.",
+    "Write the empty-state text for a to-do app with no tasks yet.",
+    "Brainstorm names for a typeface inspired by old typewriters.",
+    "Write a slogan for a city bike-share program.",
+    "Name a cocktail that is smoky and citrusy.",
+    "Write a confirmation message shown after someone unsubscribes from emails.",
+    "Name a meditation-app feature that tracks daily streaks.",
+    "Write a product description for a minimalist leather wallet.",
+    "Name a plant-based burger without using the words 'beyond' or 'impossible'."
+  ]
+}
