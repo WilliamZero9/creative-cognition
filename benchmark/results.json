@@ -1,0 +1,165 @@
+{
+  "method": "blind A/B, same-model-tier generation (only system prompt differs: plain vs SKILL.md), footer stripped before judging, separate blind judge, both orders judged to cancel position bias, plain-text verdicts",
+  "generator_model": "claude-sonnet-4-6",
+  "judge_model": "claude-opus-4-8",
+  "n_prompts": 24,
+  "n_judgments": 48,
+  "creative_wins": 31,
+  "plain_wins": 16,
+  "ties": 1,
+  "creative_win_rate_decisive_pct": 66,
+  "per_prompt_creative_both_orders": 9,
+  "per_prompt_plain_both_orders": 2,
+  "per_prompt_split_order_dependent": 13,
+  "notes": [
+    "1 of 25 original prompts dropped: the plain-baseline agent spontaneously ran the skill's process, contaminating that pair. 24 clean pairs remain.",
+    "Same provider (Anthropic) generates and judges -> 'preferred under a blind same-provider judge', not 'objectively better'.",
+    "Small N (24). Short-form tasks produce many near-ties; treat as directional."
+  ],
+  "per_prompt": [
+    {
+      "prompt": "Name a productivity app that blocks distracting websites.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Write a tagline for a coffee shop that's open 24 hours.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Come up with a name for a new color that sits between teal and gray.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Write the error message a user sees when a file upload fails.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Write a one-sentence bio for a freelance illustrator.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Name a feature that lets users undo their last 10 actions at once.",
+      "order1": "plain",
+      "order2": "plain",
+      "consistent": "plain"
+    },
+    {
+      "prompt": "Write a welcome message for a new journaling app.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Come up with a metaphor that explains recursion to a beginner.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Name a subscription box for rare houseplants.",
+      "order1": "creative",
+      "order2": "tie",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Write a push notification reminding someone to drink water.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Brainstorm titles for a podcast about failed startups.",
+      "order1": "plain",
+      "order2": "creative",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Name a dark-mode theme for a code editor.",
+      "order1": "plain",
+      "order2": "plain",
+      "consistent": "plain"
+    },
+    {
+      "prompt": "Write the 404 page message for a bakery's website.",
+      "order1": "plain",
+      "order2": "creative",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Come up with a name for a running club that meets at dawn.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Write a tagline for noise-cancelling headphones.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Name a budgeting app for people who hate budgeting.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Write the empty-state text for a to-do app with no tasks yet.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Brainstorm names for a typeface inspired by old typewriters.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Write a slogan for a city bike-share program.",
+      "order1": "plain",
+      "order2": "creative",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Name a cocktail that is smoky and citrusy.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Write a confirmation message shown after someone unsubscribes from emails.",
+      "order1": "creative",
+      "order2": "creative",
+      "consistent": "creative"
+    },
+    {
+      "prompt": "Name a meditation-app feature that tracks daily streaks.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Write a product description for a minimalist leather wallet.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    },
+    {
+      "prompt": "Name a plant-based burger without using the words 'beyond' or 'impossible'.",
+      "order1": "creative",
+      "order2": "plain",
+      "consistent": "split"
+    }
+  ]
+}

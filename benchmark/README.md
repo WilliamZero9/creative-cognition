@@ -3,6 +3,23 @@
 A blind A/B test of whether Creative Cognition output is actually preferred over
 a plain baseline — not a self-graded claim.
 
+## Latest result
+
+One run, 24 prompts (`claude-sonnet-4-6` generates both arms; `claude-opus-4-8`
+judges blind, both orders):
+
+- **Aggregate:** creative-mode preferred in **31 of 47 decisive blind judgments (66%)**, 1 tie.
+- **Position-bias-proof (the number to trust most):** on the **11** prompts where
+  the *same* side won in **both** orderings, creative won **9, plain won 2**. The
+  other **13** prompts were order-dependent toss-ups — on short creative tasks the
+  two are often genuinely close.
+
+Caveats, stated plainly: same provider generates and judges (so this is
+"preferred under a blind same-provider judge," not "objectively better"); N=24 is
+directional, not statistically tight; one of the original 25 prompts was dropped
+because the plain-baseline agent spontaneously ran the skill's process and
+contaminated that pair. Full per-prompt data: [`results.json`](results.json).
+
 ## What it measures
 
 For each prompt, the **same model** answers twice with identical settings; the
@@ -38,7 +55,19 @@ Be skeptical because:
 - **Small N.** 25 prompts is enough to see a clear signal, not enough for tight
   confidence intervals. Treat it as directional.
 
-## How to run it
+## Two runners (same method)
+
+- **`run_benchmark.py`** — standalone, hits the Anthropic API with your key. Use
+  this if you just want to run it yourself.
+- **`run_benchmark_agents.js`** — the Claude Code *workflow* that actually
+  produced the published number. Spawns subagents in-session (no API key). Run
+  from a Claude Code session with `Workflow({ scriptPath: "benchmark/run_benchmark_agents.js" })`.
+
+Both implement the identical design. The agent variant adds a scaffolding
+stripper so the judge never sees the skill's metadata footer or process
+narration — that blindness step is what makes the comparison fair.
+
+## How to run it (Python)
 
 You need Python and an Anthropic API key. The script only ever *reads* the key
 from your environment — never paste a key into a file or a chat.

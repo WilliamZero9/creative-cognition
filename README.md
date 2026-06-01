@@ -31,13 +31,14 @@ Prompts patch one output. This rewrites the objective function for the duration 
 
 ## Does it actually work? (benchmark)
 
-> _Numbers pending a run — see method below. Paste the result line here after running `benchmark/run_benchmark.py`._
+Creativity has no objective unit, so this measures the honest thing: **how often a blind judge prefers creative-mode output over a plain baseline.** Same model answers each prompt twice (only the input differs — plain assistant vs. `SKILL.md`), the skill's metadata footer is stripped, then a separate model picks the better answer **without knowing which side used the skill**.
 
-Creativity has no objective unit, so this measures the honest thing: **how often a blind judge prefers creative-mode output over a plain baseline.** Same model answers each prompt twice (only the system prompt differs — plain assistant vs. `SKILL.md`), then a separate model picks the better answer **without knowing which side used the skill**.
+**One run (24 prompts, sonnet generates both arms, opus judges blind in both orders):**
 
-Honesty guards: prompts are [fixed up front](benchmark/prompts.json) (not cherry-picked), the judge is blind, every pair is judged in **both orders** to cancel position bias, and ties are allowed. Caveat stated plainly: generator and judge are the same provider, so the honest claim is *"preferred under a blind same-provider judge,"* not *"objectively better."*
+- Creative-mode output was preferred in **31 of 47 decisive blind judgments (66%)**.
+- On the **11 prompts with a consistent winner across both orderings** (the position-bias-proof cut), creative won **9, plain won 2**. The other 13 were order-dependent toss-ups — short creative tasks are often genuinely close.
 
-Reproduce it yourself in a few minutes — see [`benchmark/`](benchmark/).
+Honesty guards: prompts are [fixed up front](benchmark/prompts.json) (not cherry-picked), the judge is blind, every pair is judged in **both orders** to cancel position bias, ties are allowed. Caveats stated plainly: generator and judge are the **same provider** (so this is *"preferred under a blind same-provider judge,"* not *"objectively better"*), and N=24 is directional, not statistically tight. Full data + method: [`benchmark/`](benchmark/).
 
 ## The 6-step process
 
@@ -159,8 +160,10 @@ creative-cognition/
 ├── hooks/
 │   └── mcr/                           # Model Context Retrieval (optional)
 ├── benchmark/
-│   ├── run_benchmark.py               # Blind A/B win-rate harness
+│   ├── run_benchmark.py               # Blind A/B win-rate harness (API key)
+│   ├── run_benchmark_agents.js        # Same method as a Claude Code workflow (no key)
 │   ├── prompts.json                   # 25 fixed neutral creative prompts
+│   ├── results.json                   # Latest run's full per-prompt data
 │   └── README.md                      # Method, honesty guards, how to run
 └── examples/
     ├── taste-profile-template.md      # Your evolving aesthetic profile
