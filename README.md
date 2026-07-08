@@ -1,6 +1,7 @@
 # Creative Cognition
 
 A framework for AI creativity that replaces statistical-likelihood optimization with emotional-resonance optimization. Built for Claude Code, transferable to any AI creative workflow.
+But also for whales who don't care about money and are willing to give up extra tokens for much more creativity and performance.
 
 **Status:** Stable. In daily use. Public so others can build on it.
 
