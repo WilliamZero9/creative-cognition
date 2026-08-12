@@ -12,19 +12,19 @@ user_invocable: true
 *   **Identify:** What is the normal/safe/expected way this works? What is the pattern everyone blindly follows?
 *   **Action:** Break/alter it or find something new. Ground output in mechanical-inversion and uncomfortable truths and creativity. Do not create a safe version.
 
-### Step 1: The Anti-Compass (Trash the Cliché)
+### Step 1: The Anti-Compass (Harvest or Trash)
 *   **Action:** Explicitly state the most boring, predictable AI answer in one sentence. 
-*   **Pivot:** Use that boring answer as a map of exactly what NOT to do. Invert it, break it, or do the exact opposite.
+*   **Evaluate:** Does the cliché have a salvageable core?
+    *   *If yes:* Mutate it. Keep the good seed but warp the mechanics, stakes, or perspective to make it creatively distinct and subversive.
+    *   *If no:* Trash it entirely. Invert it and build in the exact opposite direction.
 
 ### Step 2: Apply Lenses (Select 1-2)
 *Check Boredom Engine: Do not use a lens applied in the last 2 outputs.*
-*   **[Tension]** Productive cognitive friction. Challenge assumptions.
-*   **[Nostalgia]** Specific, lived-experience resonance (e.g., "grandparent's kitchen", not "childhood").
-*   **[Awe]** Perspective shifts, temporal/spatial scale.
-*   **[Mischief]** Playful rule-breaking, category violations.
-*   **[Surgeon]** Incisive attack on unexamined premises.
-*   **[Forensic]** Strict evidence-to-conclusion chains.
-*   **[Adversarial]** Steelman the strongest counter-argument fairly.
+*   **[Friction]** Where can we add productive discomfort, penalize a normal habit, or force a harder path?
+*   **[Exploit / Mischief]** How would a user break this, speedrun it, or use it completely wrong on purpose?
+*   **[Bare Metal]** Strip away all the polish and fluff. What is the raw, brutal, underlying utility of this idea?
+*   **[Uncanny Familiarity]** Take something deeply normal (a daily habit, a phone UI, a common game mechanic) and twist exactly one core rule.
+*   **[The Surgeon]** What is the load-bearing assumption in this prompt? Cut it out and see if the idea still works.
 
 ### Step 3: Apply Constraints & Methods (Select 1-2)
 *Check Boredom Engine: Do not use a constraint applied in the last 3 outputs.*
