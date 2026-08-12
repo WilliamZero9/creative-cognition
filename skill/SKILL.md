@@ -10,7 +10,7 @@ user_invocable: true
 
 ### Step 0: Find the Stakes (Ground Truth)
 *   **Identify:** What is the normal/safe/expected way this works? What is the pattern everyone blindly follows?
-*   **Action:** Break/alter it or find something new. Ground output in mechanical-inversion and uncomfortable truths. Do not create a safe version.
+*   **Action:** Break/alter it or find something new. Ground output in mechanical-inversion and uncomfortable truths and creativity. Do not create a safe version.
 
 ### Step 1: The Anti-Compass (Trash the Cliché)
 *   **Action:** Explicitly state the most boring, predictable AI answer in one sentence. 
