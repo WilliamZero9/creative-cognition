@@ -1,29 +1,18 @@
-## Lodestar — Memory Navigation System
+## Lodestar — Memory Navigation (`MEMORY.md`)
 
-The memory index (MEMORY.md) is organized as concentric gravity rings, not categories.
+`MEMORY.md` is the sole index file. It contains concentric gravity rings. 
 
-### Ring Structure
-- **Ring 0 — Core**: Always relevant regardless of task. User profile, universal feedback, active systems. ~10 entries max.
-- **Ring 1 — Active**: Current projects, project-specific feedback. Scanned by description, files opened only on relevance match. ~15 entries max.
-- **Ring 2 — Orbit**: Reference material, inactive projects. Only accessed when explicitly relevant. No entry limit.
+**1. Ring Structure & Access Protocol**
+*   **Ring 0 [Core]:** Universal context. Max 10 entries. Rely on descriptions; do not open files unless strictly necessary.
+*   **Ring 1 [Active]:** Current projects. Max 15 entries. Scan descriptions; open file ONLY if directly relevant to the active task.
+*   **Ring 2 [Orbit]:** Inactive/Reference. Unlimited. STRICTLY IGNORE unless explicitly requested by user or task.
+*   **Cross-Search:** Use `grep "tags:.*keyword"` to find related memories without opening files.
 
-### Navigation Protocol (Token-Efficient)
-1. MEMORY.md is always loaded (~50 lines). This is the ONLY index file.
-2. Ring 0 descriptions are dense enough to inform most decisions without opening files.
-3. Ring 1: scan descriptions, open only files matching current task.
-4. Ring 2: ignore unless the user or task explicitly references something there.
-5. Cross-cutting queries: `grep "tags:.*keyword"` on frontmatter finds all related memories in one call.
+**2. Maintenance & Drift**
+*   **New Entries:** Default to Ring 1. 
+*   **Promote:** Ring 2 → Ring 1 (if frequently accessed). Ring 1 → Ring 0 (ONLY after proving relevance across 3+ distinct conversations).
+*   **Demote:** Ring 1 → Ring 2 (when project pauses/completes). Ring 0 → Ring 1 (if it loses universal relevance).
 
-### Maintenance Rules
-- **Promotion**: When a Ring 2 memory becomes frequently relevant, promote to Ring 1. When a Ring 1 memory is relevant in nearly every conversation, promote to Ring 0.
-- **Demotion**: When a project completes or pauses, demote from Ring 1 to Ring 2. Ring 0 entries should only be demoted if they're genuinely no longer universal.
-- **New memories**: Default to Ring 1. Only promote to Ring 0 after proving universal relevance across 3+ conversations.
-- **Description compression**: Descriptions in MEMORY.md are semantic hashes — keyword clusters optimized for pattern-matching, not human prose. Under 100 chars each.
-- **Tags**: Every memory file has a `tags` field in frontmatter. Tags use ring names (core/active/orbit) + domain keywords. Update tags when promoting/demoting.
-
-### Why Lodestar
-- Polar coordinate inspiration: memories addressed by distance-from-center (relevance) + angle (domain), not flat categories
-- Single index file = one read per conversation (no MOC chain)
-- Compressed descriptions = relevance decisions without opening files
-- Tags = cross-cutting discovery via grep, no extra index files needed
-- Dynamic drift = the map reorganizes around whatever's currently important
+**3. Formatting Constraints**
+*   **Descriptions:** Write as semantic hashes (dense keyword clusters). NO human prose. Strict limit: < 100 characters per entry.
+*   **Tags:** Every memory file MUST have frontmatter `tags` formatted as `[ring_level, domain_keywords]`. You must update this tag immediately upon promotion/demotion.
