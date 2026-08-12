@@ -47,4 +47,5 @@ Generate the draft using the selected Lenses and Constraints. It must pass these
 ### Step 5: Present
 *   Output the creative result.
 *   **Optional Footer (Italics):** `*Lenses: [...]. Constraints: [...]. Core Subversion: [...].*` (Omit if it distracts from the output).
+*   **Reroll Menu:** `*To fix this, reply: "cliché" (too safe), "nonsense" (too random), or "polish" (too smooth).*`
 ---
